@@ -1093,14 +1093,13 @@ h1,h2,h3 {
     text-align:center;
   }
   .hero {
-    /* mobile: cabe naturalmente, com nav próximo ao final do hero */
     min-height: 0;
     height: auto;
     grid-template-columns:1fr;
     grid-template-rows: auto auto 1fr;
-    padding: clamp(14px, 2vh, 22px) 22px clamp(14px, 2vh, 22px);
+    padding: clamp(18px, 2.5vh, 28px) 22px clamp(18px, 2.5vh, 28px);
     column-gap: 0;
-    row-gap: clamp(8px, 1.4vh, 14px);
+    row-gap: clamp(16px, 2.4vh, 26px);
     text-align:center;
     overflow: visible;
   }
@@ -1120,19 +1119,19 @@ h1,h2,h3 {
   }
   .hero .glow { display:none; }
   .hero .photo {
-    width:  clamp(72px, min(20vw, 14vh), 128px);
-    height: clamp(72px, min(20vw, 14vh), 128px);
+    width:  clamp(160px, 46vw, 220px);
+    height: clamp(160px, 46vw, 220px);
     aspect-ratio: 1;
     border-radius: 50%;
-    border:2px solid var(--gold);
-    box-shadow: 0 0 0 6px rgba(200,169,106,0.12), 0 12px 36px rgba(0,0,0,0.45);
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 0 10px rgba(200,169,106,0.13), 0 18px 52px rgba(0,0,0,0.52);
     flex-shrink: 0;
   }
   .hero .photo img { object-position: center top; }
 
   .hero-text {
     order: 3;
-    align-self: start;
+    align-self: stretch;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1140,14 +1139,28 @@ h1,h2,h3 {
   }
   .hero p {
     font-size: clamp(14px, 3.6vw, 16px);
-    line-height: 1.55;
+    line-height: 1.6;
     max-width:100%;
     margin:0 auto;
   }
   .hero h1 {
-    font-size: clamp(24px, 6.2vw, 36px);
+    font-size: clamp(26px, 6.6vw, 38px);
     line-height: 1.1;
-    margin: 0 0 12px;
+    margin: 0 0 14px;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    align-self: stretch;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    padding: 15px 26px;
+    font-size: 15px;
   }
   .btn {
     margin-top: 16px;
@@ -1155,7 +1168,7 @@ h1,h2,h3 {
     font-size: 14px;
   }
   .hero-nav {
-    margin-top: 14px;
+    margin-top: 16px;
     gap: 22px;
     justify-content: center;
   }
