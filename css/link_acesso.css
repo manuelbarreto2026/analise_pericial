@@ -279,7 +279,6 @@ body {
 
 /* ── Botão flutuante WhatsApp ── */
 .whats-float {
-<<<<<<< HEAD
   position: fixed;
   bottom: 32px;
   right: 32px;
@@ -326,55 +325,16 @@ body {
   0%   { transform: scale(1);    opacity: 0.5;  }
   60%  { transform: scale(1.28); opacity: 0;    }
   100% { transform: scale(1.28); opacity: 0;    }
-=======
-  position:fixed;
-  bottom:32px;
-  right:32px;
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:#25D366;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 4px 18px rgba(0,0,0,0.35);
-  z-index:9999;
-  transition:transform .2s, box-shadow .2s;
-}
-
-.whats-float:hover {
-  transform:scale(1.08);
-  box-shadow:0 6px 24px rgba(0,0,0,0.45);
-}
-
-.whats-float img {
-  width:32px;
-  height:32px;
-  object-fit:contain;
-  display:block;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 @media(max-width:767px) {
   .whats-float {
-<<<<<<< HEAD
     bottom: 24px;
     right: 20px;
     width: 54px;
     height: 54px;
   }
   .whats-icon { width: 28px; height: 28px; }
-=======
-    bottom:24px;
-    right:20px;
-    width:50px;
-    height:50px;
-  }
-  .whats-float img {
-    width:28px;
-    height:28px;
-  }
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 /* ===================== RESPONSIVE ===================== */

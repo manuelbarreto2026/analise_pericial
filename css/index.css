@@ -5,10 +5,7 @@
   --gold:#C8A96A;
   --ice:#F5F3EE;
   --text:#132A36;
-<<<<<<< HEAD
   --topbar-h:42px;
-=======
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 * { box-sizing:border-box; }
@@ -28,8 +25,6 @@ h1,h2,h3 {
 }
 
 .hero {
-<<<<<<< HEAD
-  /* Garante que TODO o hero (tag + texto + CTA + foto) caiba na 1ª dobra */
   min-height: calc(100svh - var(--topbar-h));
   height: calc(100svh - var(--topbar-h));
   display:grid;
@@ -39,19 +34,10 @@ h1,h2,h3 {
   column-gap: clamp(32px, 5vw, 70px);
   row-gap: clamp(16px, 2.6vh, 36px);
   padding: clamp(20px, 3.2vh, 48px) clamp(28px, 5vw, 90px);
-=======
-  min-height:100vh;
-  display:grid;
-  grid-template-columns:1.05fr 0.95fr;
-  align-items:center;
-  gap:70px;
-  padding:90px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   background:
     radial-gradient(circle at 80% 30%, rgba(200,169,106,0.14), transparent 34%),
     linear-gradient(to right, rgba(14,36,48,0.99), rgba(14,36,48,0.82)),
     linear-gradient(to bottom, var(--petrol), var(--petrol2));
-<<<<<<< HEAD
   overflow: hidden;
 }
 
@@ -60,11 +46,6 @@ h1,h2,h3 {
   min-width: 0;
 }
 
-
-=======
-}
-
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 .tag {
   display:inline-block;
   padding:10px 20px;
@@ -77,55 +58,34 @@ h1,h2,h3 {
   margin-bottom:40px;
 }
 
-<<<<<<< HEAD
 .section .tag { margin-bottom:24px; }
 
 .hero h1 {
   font-size: clamp(34px, 4.4vw, 64px);
   line-height:1.05;
   margin:0 0 18px;
-=======
-.hero h1 {
-  font-size:76px;
-  line-height:1.02;
-  margin:0 0 35px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   letter-spacing:-0.02em;
 }
 
 .hero p {
-<<<<<<< HEAD
   font-size: clamp(15px, 1.15vw, 19px);
   line-height:1.65;
   font-weight:300;
   color:#DCE3E7;
   max-width:620px;
   margin:0;
-=======
-  font-size:22px;
-  line-height:1.9;
-  font-weight:300;
-  color:#DCE3E7;
-  max-width:720px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 .btn {
   display:inline-block;
-<<<<<<< HEAD
   margin-top:24px;
   padding:14px 30px;
-=======
-  margin-top:42px;
-  padding:18px 38px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   background:var(--gold);
   color:var(--petrol);
   text-decoration:none;
   border-radius:50px;
   font-weight:600;
   box-shadow:0 20px 45px rgba(0,0,0,0.26);
-<<<<<<< HEAD
   font-size: 15px;
   letter-spacing: 0.02em;
   border: 1px solid var(--gold);
@@ -829,21 +789,14 @@ h1,h2,h3 {
   .diff-icon svg { width: 26px; height: 26px; }
   .diff-card h3 { font-size: 24px; }
   .diff-card p { font-size: 15px; }
-=======
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 /* ===================== HERO NAV ===================== */
 .hero-nav {
   display: flex;
-<<<<<<< HEAD
   gap: 28px;
   margin-top: 18px;
   flex-wrap: wrap;
-=======
-  gap: 32px;
-  margin-top: 20px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 .hero-nav a {
@@ -866,55 +819,36 @@ h1,h2,h3 {
 .photo-wrap {
   display:flex;
   justify-content:center;
-<<<<<<< HEAD
   align-items:center;
   position:relative;
   height: 100%;
   min-height: 0;
-=======
-  position:relative;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 .glow {
   position:absolute;
-<<<<<<< HEAD
   width: min(540px, 90%);
   aspect-ratio: 1;
   background:rgba(200,169,106,0.13);
   filter:blur(85px);
   border-radius:50%;
   pointer-events:none;
-=======
-  width:540px;
-  height:540px;
-  background:rgba(200,169,106,0.13);
-  filter:blur(85px);
-  border-radius:50%;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 .photo {
   position:relative;
-<<<<<<< HEAD
   width: auto;
   height: 100%;
   max-height: 100%;
   aspect-ratio: 1 / 1;
   max-width: 100%;
-=======
-  width:100%;
-  max-width:520px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   border-radius:36px;
   overflow:hidden;
   box-shadow:0 35px 90px rgba(0,0,0,0.62);
   border:1px solid rgba(200,169,106,0.22);
 }
 
-<<<<<<< HEAD
 .hero .photo {
-  /* na hero, a foto se acomoda na altura disponível da linha */
   height: min(100%, 70svh);
 }
 
@@ -922,19 +856,11 @@ h1,h2,h3 {
   width:100%;
   height:100%;
   object-fit: cover;
-=======
-.photo img {
-  width:100%;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   display:block;
 }
 
 .section {
-<<<<<<< HEAD
   padding:78px 90px;
-=======
-  padding:118px 90px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 .light {
@@ -1026,21 +952,6 @@ h1,h2,h3 {
   line-height:1.75;
 }
 
-<<<<<<< HEAD
-=======
-.authority {
-  display:grid;
-  grid-template-columns:430px 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.authority .photo {
-  max-width:430px;
-  box-shadow:0 25px 70px rgba(0,0,0,0.24);
-}
-
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 .footer {
   background:var(--deep);
   padding:90px 40px;
@@ -1130,53 +1041,33 @@ h1,h2,h3 {
 
 .tag-hero {
   grid-column:1 / -1;
-<<<<<<< HEAD
   align-self: start;
-=======
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   justify-self:center;
   display:block;
   width:fit-content;
   text-align:center;
   border:1px solid rgba(200,169,106,0.45);
   background:linear-gradient(135deg, rgba(200,169,106,0.1), rgba(200,169,106,0.03));
-<<<<<<< HEAD
   padding: clamp(10px, 1.4vh, 18px) clamp(28px, 4vw, 52px);
   margin-bottom: 0;
-=======
-  padding:22px 52px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   animation:pulse-gold 3.2s ease-in-out infinite;
 }
 
 .tag-nome {
   display:block;
   font-family:'Cormorant Garamond', serif;
-<<<<<<< HEAD
   font-size: clamp(22px, 2.2vw, 30px);
-=======
-  font-size:34px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   font-weight:600;
   letter-spacing:0.1em;
   text-transform:uppercase;
   color:var(--gold);
-<<<<<<< HEAD
   line-height:1.05;
   margin-bottom:8px;
-=======
-  line-height:1;
-  margin-bottom:7px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
 
 .tag-sub {
   display:block;
-<<<<<<< HEAD
   font-size: clamp(12px, 1.05vw, 15px);
-=======
-  font-size:17px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   letter-spacing:0.28em;
   text-transform:uppercase;
   color:var(--gold);
@@ -1199,7 +1090,6 @@ h1,h2,h3 {
     text-align:center;
   }
   .hero {
-<<<<<<< HEAD
     min-height: 0;
     height: auto;
     grid-template-columns:1fr;
@@ -1217,8 +1107,6 @@ h1,h2,h3 {
   .tag-nome { font-size: clamp(18px, 5vw, 22px); margin-bottom: 6px; }
   .tag-sub  { font-size: clamp(10px, 2.8vw, 12px); letter-spacing: 0.22em; }
 
-  /* foto pequena redonda - escala junto com a largura E a altura do viewport
-     para garantir que sempre apareça, mesmo em telas pequenas/curtas */
   .hero .photo-wrap {
     order: 2;
     height: auto;
@@ -1247,23 +1135,10 @@ h1,h2,h3 {
   .hero p {
     font-size: clamp(14px, 3.6vw, 16px);
     line-height: 1.6;
-=======
-    grid-template-columns:1fr;
-    padding:60px 28px;
-    gap:52px;
-    text-align:center;
-  }
-  .tag-hero {
-    margin:0 auto 40px;
-  }
-  .hero p {
-    font-size:19px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
     max-width:100%;
     margin:0 auto;
   }
   .hero h1 {
-<<<<<<< HEAD
     font-size: clamp(26px, 6.6vw, 38px);
     line-height: 1.1;
     margin: 0 0 14px;
@@ -1293,10 +1168,6 @@ h1,h2,h3 {
     justify-content: center;
   }
   .hero-nav a { font-size: .7rem; }
-=======
-    font-size:54px;
-  }
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   .section {
     padding:80px 28px;
     text-align:center;
@@ -1315,19 +1186,7 @@ h1,h2,h3 {
   .cards, .service-grid {
     grid-template-columns:1fr;
   }
-<<<<<<< HEAD
   .authority-section .tag {
-=======
-  .authority {
-    grid-template-columns:1fr;
-    gap:44px;
-    text-align:center;
-  }
-  .authority .photo {
-    margin:0 auto;
-  }
-  .tag {
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
     margin-left:auto;
     margin-right:auto;
   }
@@ -1343,16 +1202,6 @@ h1,h2,h3 {
     box-shadow:0 6px 24px rgba(0,0,0,0.55);
   }
 
-<<<<<<< HEAD
-  /* hero h1 / p / btn agora s\u00e3o controlados por clamp() na regra principal */
-=======
-  .hero h1 {
-    font-size:36px;
-  }
-  .hero p {
-    font-size:17px;
-  }
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   .section h2 {
     font-size:30px;
   }
@@ -1365,11 +1214,7 @@ h1,h2,h3 {
   .footer-title {
     font-size:26px;
   }
-<<<<<<< HEAD
   .section .btn {
-=======
-  .btn {
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
     display:block;
     text-align:center;
   }
@@ -1378,12 +1223,8 @@ h1,h2,h3 {
 /* ===================== TOP BAR ===================== */
 .top-bar {
   background: var(--deep);
-<<<<<<< HEAD
   height: var(--topbar-h);
   padding: 0 24px;
-=======
-  padding: 10px 24px;
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -1442,7 +1283,6 @@ h1,h2,h3 {
 
 /* ── Botão flutuante WhatsApp ── */
 .whats-float {
-<<<<<<< HEAD
   position: fixed;
   bottom: 96px;
   right: 32px;
@@ -1499,44 +1339,4 @@ h1,h2,h3 {
     height: 54px;
   }
   .whats-icon { width: 28px; height: 28px; }
-=======
-  position:fixed;
-  bottom:96px;
-  right:32px;
-  width:54px;
-  height:54px;
-  border-radius:50%;
-  background:#25D366;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 4px 18px rgba(0,0,0,0.35);
-  z-index:9999;
-  transition:transform .2s, box-shadow .2s;
-}
-
-.whats-float:hover {
-  transform:scale(1.08);
-  box-shadow:0 6px 24px rgba(0,0,0,0.45);
-}
-
-.whats-float img {
-  width:32px;
-  height:32px;
-  object-fit:contain;
-  display:block;
-}
-
-@media(max-width:480px) {
-  .whats-float {
-    bottom:88px;
-    right:20px;
-    width:50px;
-    height:50px;
-  }
-  .whats-float img {
-    width:28px;
-    height:28px;
-  }
->>>>>>> ef4755e303cd91049eab676590edeef546611c41
 }
