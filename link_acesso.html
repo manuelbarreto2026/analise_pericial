@@ -41,13 +41,7 @@
 
   <!-- VIDEO -->
   <div class="video-wrapper">
-    <iframe
-      src="https://www.youtube.com/embed/l76UQY5f-8w?autoplay=1&mute=1&loop=1&playlist=l76UQY5f-8w&rel=0&controls=1"
-      title="Barreto Chaves Medicina Legal | Apresentação Institucional"
-      frameborder="0"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <div id="youtube-player"></div>
   </div>
 
   <!-- LINKS -->
@@ -102,5 +96,33 @@
   </svg>
 </a>
 
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  var player;
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-player', {
+      videoId: 'l76UQY5f-8w',
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        loop: 1,
+        playlist: 'l76UQY5f-8w',
+        rel: 0,
+        controls: 1,
+        playsinline: 1
+      },
+      events: {
+        onReady: function(e) {
+          e.target.playVideo();
+          setTimeout(function() {
+            player.unMute();
+            player.setVolume(60);
+          }, 1500);
+        }
+      }
+    });
+  }
+</script>
 </body>
 </html>
