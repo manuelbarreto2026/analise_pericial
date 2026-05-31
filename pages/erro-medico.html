@@ -158,6 +158,15 @@
   </div>
 </section>
 
+<!-- ===================== VÍDEO ===================== -->
+<section class="section video-section">
+  <div class="tag">Vídeo Explicativo</div>
+  <h2>Análise técnica em casos de suposto erro médico</h2>
+  <div class="video-frame">
+    <div id="yt-player-em"></div>
+  </div>
+</section>
+
 <!-- ===================== COMO CONDUZIMOS A ANÁLISE ===================== -->
 <section class="section method">
   <div class="method-head">
@@ -260,5 +269,34 @@
 </a>
 
 <script src="../js/index.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  var playerEm;
+  function onYouTubeIframeAPIReady() {
+    playerEm = new YT.Player('yt-player-em', {
+      videoId: 'ODJM4yQq4vQ',
+      width: '100%',
+      height: '100%',
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        loop: 1,
+        playlist: 'ODJM4yQq4vQ',
+        rel: 0,
+        controls: 1,
+        playsinline: 1
+      },
+      events: {
+        onReady: function(e) {
+          e.target.playVideo();
+          setTimeout(function() {
+            playerEm.unMute();
+            playerEm.setVolume(60);
+          }, 1500);
+        }
+      }
+    });
+  }
+</script>
 </body>
 </html>
