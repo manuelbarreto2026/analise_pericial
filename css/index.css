@@ -1014,6 +1014,22 @@ h1,h2,h3 {
   letter-spacing:0.04em;
 }
 
+.footer-policy {
+  margin-top: 24px;
+}
+
+.footer-policy a {
+  font-size: 12px;
+  color: #888;
+  text-decoration: none;
+  letter-spacing: .06em;
+  border-bottom: 1px solid #444;
+  padding-bottom: 1px;
+  transition: color .2s;
+}
+
+.footer-policy a:hover { color: #bbb; }
+
 .contact-block {
   margin-top:45px;
   color:#DCE3E7;
@@ -1119,6 +1135,8 @@ h1,h2,h3 {
 }
 
 @media(max-width:1100px) {
+  .topbar-nav { display: none; }
+
   .back-to-top {
     bottom:24px;
     right:20px;
@@ -1401,9 +1419,31 @@ h1,h2,h3 {
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   border-bottom: 1px solid rgba(200,169,106,.2);
+  gap: 16px;
 }
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar-nav a {
+  color: rgba(255,255,255,.62);
+  text-decoration: none;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 2px;
+  transition: color .2s;
+  white-space: nowrap;
+}
+
+.topbar-nav a:hover { color: var(--gold); }
 
 .btn-site-oficial {
   display: inline-block;

@@ -124,5 +124,22 @@
     });
   }
 </script>
+
+<!-- Google tag (gtag.js) — substituir AW-18177286407 pelo ID real após ativar a conta -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18177286407"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18177286407');
+</script>
+<script>
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+  el.addEventListener('click', function(){
+    gtag('event', 'whatsapp_click', { event_category: 'contato' });
+  });
+});
+</script>
+
 </body>
 </html>

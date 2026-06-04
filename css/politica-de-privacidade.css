@@ -1,0 +1,176 @@
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; margin: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+/* ===================== TOP BAR ===================== */
+.top-bar {
+  height: 48px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #bbb;
+  gap: 16px;
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar-nav a {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  text-decoration: none;
+  color: #444;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: border-color .2s;
+}
+
+.topbar-nav a:hover,
+.topbar-nav a.active {
+  border-color: #999;
+  color: #111;
+}
+
+.btn-cta {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 7px 18px;
+  border: 1px solid #333;
+  color: #333;
+  white-space: nowrap;
+  transition: background .2s;
+}
+
+.btn-cta:hover { background: #f0f0f0; }
+
+/* ===================== HERO ===================== */
+.hero {
+  padding: 72px 90px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid #aaa;
+  border-radius: 40px;
+  font-size: 11px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  color: #555;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  line-height: 1.08;
+  margin: 0 0 16px;
+  max-width: 760px;
+}
+
+.hero-sub {
+  font-size: 17px;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #555;
+  max-width: 640px;
+  margin: 0;
+}
+
+/* ===================== CONTEÚDO ===================== */
+.policy-body {
+  padding: 72px 90px;
+  max-width: 860px;
+}
+
+.policy-body h2 {
+  font-size: clamp(22px, 2.2vw, 32px);
+  margin: 48px 0 16px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
+
+.policy-body h2:first-child {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.policy-body p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0 0 16px;
+}
+
+.policy-body ul {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+
+.policy-body li {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.policy-body a {
+  color: #111;
+  text-decoration: underline;
+}
+
+.policy-date {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 40px;
+  display: block;
+}
+
+/* ===================== WHATSAPP FLUTUANTE ===================== */
+.whats-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 54px;
+  height: 54px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+  transition: transform .2s;
+}
+
+.whats-float:hover { transform: scale(1.08); }
+.whats-float svg { width: 28px; height: 28px; }
+
+/* ===================== RESPONSIVO ===================== */
+@media (max-width: 768px) {
+  .hero { padding: 48px 24px; }
+  .policy-body { padding: 48px 24px; }
+  .top-bar { padding: 0 16px; }
+  .topbar-nav { display: none; }
+}

@@ -120,9 +120,14 @@
 
 <body>
 
-<div class="top-bar">
-  <a href="index.html" class="btn-site-oficial">SITE OFICIAL</a>
-</div>
+<header class="top-bar">
+  <nav class="topbar-nav">
+    <a href="assistencia-tecnica-medica.html">Assistência Técnica Médica</a>
+    <a href="erro-medico.html">Erro Médico</a>
+    <a href="parecer-tecnico-medico.html">Parecer Técnico Médico</a>
+  </nav>
+  <a href="https://wa.me/5512996662041" class="btn-site-oficial">Falar com Especialista</a>
+</header>
 
 <nav class="main-nav" aria-label="Navegação principal">
   <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
@@ -491,6 +496,10 @@
 
   </div>
 
+  <div class="footer-policy">
+    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+  </div>
+
   <div class="social-links">
     <a class="social-btn" href="https://www.facebook.com/manuel.b.chaves/" target="_blank" rel="noopener" aria-label="Facebook">
       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -527,6 +536,22 @@
 </a>
 
 <script src="js/index.js"></script>
+
+<!-- Google tag (gtag.js) — substituir AW-18177286407 pelo ID real após ativar a conta -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18177286407"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18177286407');
+</script>
+<script>
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+  el.addEventListener('click', function(){
+    gtag('event', 'whatsapp_click', { event_category: 'contato' });
+  });
+});
+</script>
 
 </body>
 </html>
