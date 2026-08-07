@@ -22,7 +22,7 @@ anotado como peça viva (linha de scan + notas que se desenham). Bandas entre se
 Motion: vanilla JS (sem lib). prefers-reduced-motion desliga tudo. LCP = H1 texto.
 
 SUBSTITUIR ANTES DE PUBLICAR (busque por "[["):
-  (rótulo de conversão — pendente)  rótulo de conversão do Google Ads (AW-18177286407/xxxx)
+  (rótulo — pendente)  rótulo de conversão do Google Ads (AW-18177286407/xxxx)
   (GA4 — pendente)            ID de medição GA4
   (CRM PJ — pendente)            registro da PJ no CRM-SP (Res. CFM 2.336/2023, art. 5º)
 ================================================================================
@@ -198,11 +198,29 @@ section{padding:clamp(74px,10vw,150px) 0;position:relative}
 .top.solid{background:rgba(3,13,18,.94)}
 .top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
 .brand{display:flex;align-items:center;gap:13px;text-decoration:none}
-.brand img{height:42px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4))}
+.brand img{height:58px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4))}
 .brand .bt{font-family:var(--f-display);font-size:1.12rem;color:#F3F8F9;line-height:1.1}
 .brand .bt span{display:block;font-family:var(--f-data);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mark)}
 .top .btn{padding:13px 22px;font-size:.88rem;min-height:46px}
-@media (max-width:680px){.top .btn{display:none}.brand .bt{display:none}}
+@media (max-width:680px){.brand img{height:50px}}
+.nav{display:flex;gap:26px;margin:0 auto}
+.nav a{font-family:var(--f-data);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-d);text-decoration:none;transition:color .2s var(--ease);white-space:nowrap}
+.nav a:hover{color:var(--mark)}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;border:1px solid rgba(200,169,106,.3);border-radius:8px;background:transparent;cursor:pointer;flex:none}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--mark);margin:0 auto;transition:.2s var(--ease)}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none}
+.mobile-menu[hidden]{display:none}
+@media (max-width:900px){
+  .nav{display:none}
+  .top .top-btn{display:none}
+  .nav-toggle{display:flex}
+  .mobile-menu:not([hidden]){display:flex;flex-direction:column;gap:2px;padding:8px 20px 18px;background:rgba(3,13,18,.98);border-top:1px solid rgba(200,169,106,.14)}
+  .mobile-menu a{padding:14px 4px;color:var(--text-d);text-decoration:none;font-family:var(--f-data);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.06)}
+  .mobile-menu a.btn{display:flex;justify-content:center;margin-top:12px;border-bottom:0;text-transform:none;letter-spacing:normal}
+}
 
 /* ============================================================
    6. HERO
@@ -212,13 +230,13 @@ section{padding:clamp(74px,10vw,150px) 0;position:relative}
 .hero-bg{position:absolute;top:0;bottom:0;right:0;left:auto;width:min(80%,1120px);z-index:0;
   -webkit-mask-image:linear-gradient(90deg,transparent 0,transparent 4%,rgba(0,0,0,.28) 32%,#000 66%);
   mask-image:linear-gradient(90deg,transparent 0,transparent 4%,rgba(0,0,0,.28) 32%,#000 66%)}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 18%;
-  filter:grayscale(.7) contrast(1.08) brightness(.84);transform:scale(1.03);
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:30% 14%;
+  filter:grayscale(.18) contrast(1.05) brightness(.98) saturate(1.12);transform:scale(1.03);
   animation:heroZoom 20s var(--ease) infinite alternate}
 @keyframes heroZoom{0%{transform:scale(1.03)}100%{transform:scale(1.1)}}
 /* duotone petróleo/ouro (dissolvido junto com a foto pela máscara) */
 .hero-bg .duo{position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(150deg,rgba(6,18,26,.18),rgba(20,54,70,.42) 55%,rgba(200,169,106,.24));mix-blend-mode:multiply}
+  background:linear-gradient(150deg,rgba(6,18,26,.10),rgba(20,54,70,.20) 55%,rgba(200,169,106,.14));mix-blend-mode:multiply}
 .hero-bg .veil{position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(52% 56% at 80% 15%, rgba(200,169,106,.2), transparent 60%)}
 .hero-bg .sweep{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
@@ -245,15 +263,15 @@ section{padding:clamp(74px,10vw,150px) 0;position:relative}
 .proof li{position:relative;padding-left:15px}
 .proof li::before{content:"";position:absolute;left:0;top:.5em;width:5px;height:5px;background:var(--mark)}
 @media (max-width:900px){
-  #hero{min-height:auto;display:block;padding-top:0;padding-bottom:clamp(40px,7vw,60px);background:var(--deep)}
-  .hero-bg{position:relative;top:auto;bottom:auto;right:auto;left:auto;width:100%;height:50vh;min-height:330px;max-height:480px;
+  #hero{min-height:auto;display:block;position:relative;padding-top:0;padding-bottom:clamp(40px,7vw,60px);background:var(--deep)}
+  .hero-bg{position:relative;top:auto;bottom:auto;right:auto;left:auto;width:100%;height:54vh;min-height:340px;max-height:520px;
     -webkit-mask-image:none;mask-image:none}
-  .hero-bg img{object-position:center 16%}
+  .hero-bg img{object-position:60% 8%}
   .hero-bg .veil{background:
-    linear-gradient(180deg,rgba(6,18,26,0) 42%,rgba(6,18,26,.55) 72%,var(--deep) 100%),
-    radial-gradient(60% 50% at 78% 12%, rgba(200,169,106,.2), transparent 60%)}
-  .hero-in{max-width:100%;padding-top:26px}
-  .hero-id{position:static;text-align:left;margin-top:16px}
+    linear-gradient(180deg,rgba(6,18,26,0) 18%,rgba(6,18,26,.42) 50%,rgba(6,18,26,.9) 80%,var(--deep) 100%),
+    radial-gradient(60% 50% at 78% 12%, rgba(200,169,106,.16), transparent 60%)}
+  .hero-in{max-width:100%;position:relative;z-index:2;margin-top:clamp(-160px,-26vw,-110px);padding-top:0}
+  .hero-id{position:static;text-align:left;margin-top:14px}
 }
 
 /* ============================================================
@@ -462,14 +480,29 @@ footer a:hover{color:var(--mark-2)}
 <header class="top" id="top">
   <div class="wrap top-in">
     <a class="brand" href="/">
-      <img src="images/logo-barreto.png" alt="Barreto Chaves Medicina Legal" width="120" height="78">
-      <span class="bt">Barreto Chaves<span>Medicina Legal</span></span>
+      <img src="images/logo-barreto-transp.png" alt="Barreto Chaves Medicina Legal" width="120" height="79">
     </a>
-    <a class="btn" href="#" data-cta="topbar">
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#falhas">Onde falha</a>
+      <a href="#clinico">Diferencial</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="btn top-btn" href="#" data-cta="topbar">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.3-2.6 10 10 0 0 1-2.1-3c-.2-.5-.3-1.1-.1-1.6.1-.4.7-1.1 1-1.3.3-.2.7-.1.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.1.2-.2.4 0 .7a7.4 7.4 0 0 0 3.2 2.7c.3.1.5.1.7-.1l.6-.7c.2-.2.5-.3.8-.2l1.5.7c.3.2.4.5.3.9Z"/></svg>
       Mandar o laudo
     </a>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Navegação" hidden>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#falhas">Onde falha</a>
+    <a href="#clinico">Diferencial</a>
+    <a href="#faq">Dúvidas</a>
+    <a class="btn" href="#" data-cta="mobilemenu">Mandar o laudo</a>
+  </nav>
 </header>
 
 <main id="conteudo">
@@ -706,7 +739,7 @@ footer a:hover{color:var(--mark-2)}
   <div class="wrap">
     <div class="f-grid">
       <div>
-        <div class="f-brand"><img src="images/logo-barreto.png" alt="Barreto Chaves Medicina Legal" width="120" height="78"></div>
+        <div class="f-brand"><img src="images/logo-barreto-transp.png" alt="Barreto Chaves Medicina Legal" width="120" height="79"></div>
         <p style="margin:0">Assistência técnica em perícia médica para demandas cíveis, trabalhistas, previdenciárias e criminais.</p>
       </div>
       <div>
@@ -757,7 +790,7 @@ footer a:hover{color:var(--mark-2)}
     var done = false;
     function nav(){ if(!done){ done = true; window.open(go, "_blank", "noopener"); } }
     if (typeof gtag === "function"){
-      gtag("event","conversion",{ send_to:"AW-18177286407/(rótulo de conversão — pendente)", event_callback: nav });
+      gtag("event","conversion",{ send_to:"AW-18177286407/(rótulo — pendente)", event_callback: nav });
       gtag("event","whatsapp_click",{ lp:"lp01_impugnacao", cta_origin: origin });
       setTimeout(nav, 900);
     } else { nav(); }
@@ -779,6 +812,20 @@ footer a:hover{color:var(--mark-2)}
   /* header sólido no scroll */
   var top = document.getElementById("top");
   addEventListener("scroll", function(){ top.classList.toggle("solid", scrollY > 30); }, { passive:true });
+
+  /* menu mobile (hamburger) */
+  var navToggle = document.querySelector(".nav-toggle");
+  var mobileMenu = document.getElementById("mobile-menu");
+  if (navToggle && mobileMenu){
+    navToggle.addEventListener("click", function(){
+      var open = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!open));
+      mobileMenu.hidden = open;
+    });
+    mobileMenu.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){ navToggle.setAttribute("aria-expanded","false"); mobileMenu.hidden = true; });
+    });
+  }
 
   /* revelação + gatilho do documento */
   var items = document.querySelectorAll(".rv, #doc");
