@@ -670,7 +670,7 @@ footer a:hover{color:var(--mark-2)}
           <li>Graduação em Medicina pela FAMERP, 1994.</li>
           <li>Residência médica em Otorrinolaringologia, FAMERP, 1997.</li>
           <li>Curso de Perícia Médica, 40 horas, Instituto Felipe Hurtado.</li>
-          <li>Pós-graduações <em>lato sensu</em> em Medicina Ortomolecular, Ciência Anti-aging e Adequação Nutricional. NÃO ESPECIALISTA.</li>
+          <li>Pós-graduações <em>lato sensu</em> em Medicina Ortomolecular, Ciência Anti-aging e Adequação Nutricional.</li>
         </ul>
       </div>
       <div class="rv d1">
@@ -678,7 +678,43 @@ footer a:hover{color:var(--mark-2)}
           <img src="images/dr-barreto-sobre.webp" width="1080" height="1600" loading="lazy" decoding="async"
                alt="Dr. Manuel Barreto Chaves, responsável técnico da Barreto Chaves Medicina Legal.">
         </div>
-        <p class="cap">Res. CFM 2.336/2023: pós-graduações que não correspondem a especialidade registrada são informadas com a indicação NÃO ESPECIALISTA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEPOIMENTOS ===================== -->
+  <style>
+    #depoimentos{background:linear-gradient(180deg,var(--deep),var(--abyss))}
+    .dep-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:clamp(2.2rem,4vw,3.2rem)}
+    @media(max-width:760px){.dep-grid{grid-template-columns:1fr;gap:18px}}
+    .dep-card{margin:0;background:linear-gradient(180deg,var(--ink-2),var(--ink));border:1px solid rgba(200,169,106,.22);
+      box-shadow:0 40px 90px -60px rgba(0,0,0,.9);padding:clamp(28px,3vw,42px) clamp(24px,3vw,40px);position:relative;overflow:hidden}
+    .dep-card::before{content:"\201C";position:absolute;top:2px;left:18px;font-family:var(--f-display);font-size:5.5rem;line-height:1;color:var(--mark);opacity:.14;pointer-events:none}
+    .dep-quote{font-family:var(--f-display);font-size:clamp(1.04rem,1.55vw,1.22rem);line-height:1.62;color:var(--text-d);position:relative;z-index:1}
+    .dep-author{display:flex;align-items:center;gap:15px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(200,169,106,.18)}
+    .dep-author img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center;border:2px solid var(--mark);flex-shrink:0}
+    .dep-author b{display:block;font-family:var(--f-display);font-size:1.08rem;color:#F3F8F9;font-weight:500}
+    .dep-author span{font-family:var(--f-data);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mark);margin-top:2px;display:block}
+  </style>
+  <section id="depoimentos">
+    <div class="wrap">
+      <span class="tag rv">Quem já encaminhou um caso</span>
+      <h2 class="meas rv">Advogados que confiaram a fundamentação médica à Barreto Chaves.</h2>
+      <div class="dep-grid">
+        <figure class="dep-card rv">
+          <blockquote class="dep-quote">“Gostaria de registrar meu sincero agradecimento ao Dr. Manuel Barreto, pela dedicação, profissionalismo e excelência na atuação como Perito Judicial em um processo no qual atuei. Sua competência técnica, imparcialidade e seriedade foram fundamentais para a busca da verdade e para a correta condução da Justiça. Minha admiração e gratidão pelo seu trabalho.”</blockquote>
+          <figcaption class="dep-author">
+            <img src="images/dep-cristiane.webp" width="440" height="440" loading="lazy" decoding="async" alt="Cristiane Teixeira, advogada">
+            <div><b>Cristiane Teixeira</b><span>Advogada · OAB/SP 158.173</span></div>
+          </figcaption>
+        </figure>
+        <figure class="dep-card rv d1">
+          <blockquote class="dep-quote">“Tive a satisfação de contar com a assistência técnica do Dr. Manuel em uma demanda de grande relevância. Seu trabalho foi realizado com elevado conhecimento técnico, atenção aos detalhes e comprometimento, contribuindo de forma decisiva para o sucesso da ação. Recomendo seus serviços com plena confiança.”</blockquote>
+          <figcaption class="dep-author">
+            <img src="images/dep-valdir.webp" width="440" height="440" loading="lazy" decoding="async" alt="Valdir Aparecido Rosa Júnior, advogado">
+            <div><b>Valdir Aparecido Rosa Júnior</b><span>Advogado · OAB/SP 314.547</span></div>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
