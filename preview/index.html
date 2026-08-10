@@ -22,9 +22,9 @@ anotado como peça viva (linha de scan + notas que se desenham). Bandas entre se
 Motion: vanilla JS (sem lib). prefers-reduced-motion desliga tudo. LCP = H1 texto.
 
 SUBSTITUIR ANTES DE PUBLICAR (busque por "[["):
-  (rótulo — pendente)  rótulo de conversão do Google Ads (AW-18177286407/xxxx)
-  (GA4 — pendente)            ID de medição GA4
-  (CRM PJ — pendente)            registro da PJ no CRM-SP (Res. CFM 2.336/2023, art. 5º)
+  [[ROTULO_CONVERSAO]]  rótulo de conversão do Google Ads (AW-18177286407/xxxx)
+  [[GA4_ID]]            ID de medição GA4
+  [[CRM_PJ]]            registro da PJ no CRM-SP (Res. CFM 2.336/2023, art. 5º)
 ================================================================================
 -->
 
@@ -227,16 +227,15 @@ section{padding:clamp(74px,10vw,150px) 0;position:relative}
    ============================================================ */
 #hero{position:relative;min-height:min(93vh,900px);display:flex;align-items:center;overflow:hidden;background:var(--deep);
   padding-top:clamp(96px,13vh,160px);padding-bottom:clamp(56px,8vw,96px);border-bottom:1px solid rgba(200,169,106,.14)}
-.hero-bg{position:absolute;top:0;bottom:0;right:0;left:auto;width:min(80%,1120px);z-index:0;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0,transparent 4%,rgba(0,0,0,.28) 32%,#000 66%);
-  mask-image:linear-gradient(90deg,transparent 0,transparent 4%,rgba(0,0,0,.28) 32%,#000 66%)}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:30% 14%;
-  filter:grayscale(.18) contrast(1.05) brightness(.98) saturate(1.12);transform:scale(1.03);
-  animation:heroZoom 20s var(--ease) infinite alternate}
-@keyframes heroZoom{0%{transform:scale(1.03)}100%{transform:scale(1.1)}}
-/* duotone petróleo/ouro (dissolvido junto com a foto pela máscara) */
+.hero-bg{position:absolute;inset:0;width:100%;z-index:0}
+.hero-bg picture{display:contents}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 32%;
+  filter:contrast(1.03) saturate(1.03);transform:scale(1.02);
+  animation:heroZoom 22s var(--ease) infinite alternate}
+@keyframes heroZoom{0%{transform:scale(1.02)}100%{transform:scale(1.07)}}
+/* legibilidade: escurece a esquerda pro texto sem tocar no retrato (imagem já vem tratada) */
 .hero-bg .duo{position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(150deg,rgba(6,18,26,.10),rgba(20,54,70,.20) 55%,rgba(200,169,106,.14));mix-blend-mode:multiply}
+  background:linear-gradient(90deg,rgba(6,18,26,.58) 0%,rgba(6,18,26,.30) 30%,rgba(6,18,26,0) 56%)}
 .hero-bg .veil{position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(52% 56% at 80% 15%, rgba(200,169,106,.2), transparent 60%)}
 .hero-bg .sweep{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
@@ -266,7 +265,7 @@ section{padding:clamp(74px,10vw,150px) 0;position:relative}
   #hero{min-height:auto;display:block;position:relative;padding-top:0;padding-bottom:clamp(40px,7vw,60px);background:var(--deep)}
   .hero-bg{position:relative;top:auto;bottom:auto;right:auto;left:auto;width:100%;height:54vh;min-height:340px;max-height:520px;
     -webkit-mask-image:none;mask-image:none}
-  .hero-bg img{object-position:60% 8%}
+  .hero-bg img{object-position:50% 8%;filter:none;animation:none;transform:none}
   .hero-bg .veil{background:
     linear-gradient(180deg,rgba(6,18,26,0) 18%,rgba(6,18,26,.42) 50%,rgba(6,18,26,.9) 80%,var(--deep) 100%),
     radial-gradient(60% 50% at 78% 12%, rgba(200,169,106,.16), transparent 60%)}
@@ -387,10 +386,10 @@ mark sup{font-family:var(--f-data);font-size:.54em;font-weight:500;color:#101E26
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.74fr);gap:clamp(32px,5vw,70px);align-items:start}
 @media (max-width:920px){.split{grid-template-columns:1fr}}
 .frame{position:relative;overflow:hidden;border:1px solid rgba(200,169,106,.3);box-shadow:0 40px 90px -44px rgba(0,0,0,.8)}
-.frame img{filter:grayscale(1) contrast(1.06) brightness(.9);transform:scale(1.02);transition:transform 1.1s var(--ease), filter .6s var(--ease)}
+.frame img{filter:contrast(1.03) saturate(1.03);transform:scale(1.02);transition:transform 1.1s var(--ease), filter .6s var(--ease)}
 .frame::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(200deg,rgba(28,74,94,.5),rgba(6,18,26,.2) 55%,rgba(200,169,106,.2))}
-.frame:hover img{transform:scale(1.06);filter:grayscale(.5) contrast(1.05) brightness(1)}
+.frame:hover img{transform:scale(1.06);filter:contrast(1.04) saturate(1.06)}
 .stat{display:flex;gap:26px;flex-wrap:wrap;margin:1.9rem 0 .4rem}
 .stat b{font-family:var(--f-display);font-size:clamp(2.2rem,4vw,3rem);color:var(--mark-2);line-height:1;font-weight:500;display:block}
 .stat span{font-family:var(--f-data);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-d-soft);margin-top:8px;display:block}
@@ -490,7 +489,7 @@ footer a:hover{color:var(--mark-2)}
     </nav>
     <a class="btn top-btn" href="#" data-cta="topbar">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.3-2.6 10 10 0 0 1-2.1-3c-.2-.5-.3-1.1-.1-1.6.1-.4.7-1.1 1-1.3.3-.2.7-.1.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.1.2-.2.4 0 .7a7.4 7.4 0 0 0 3.2 2.7c.3.1.5.1.7-.1l.6-.7c.2-.2.5-.3.8-.2l1.5.7c.3.2.4.5.3.9Z"/></svg>
-      Mandar o laudo
+      Enviar o laudo
     </a>
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
@@ -501,7 +500,7 @@ footer a:hover{color:var(--mark-2)}
     <a href="#falhas">Onde falha</a>
     <a href="#clinico">Diferencial</a>
     <a href="#faq">Dúvidas</a>
-    <a class="btn" href="#" data-cta="mobilemenu">Mandar o laudo</a>
+    <a class="btn" href="#" data-cta="mobilemenu">Enviar o laudo</a>
   </nav>
 </header>
 
@@ -510,8 +509,11 @@ footer a:hover{color:var(--mark-2)}
   <!-- ===================== 1. HERO ===================== -->
   <section id="hero">
     <div class="hero-bg">
-      <img src="images/dr-barreto-retrato.webp" width="750" height="1254" fetchpriority="high"
-           alt="Dr. Manuel Barreto Chaves, médico responsável técnico da Barreto Chaves Medicina Legal.">
+      <picture>
+        <source media="(max-width:900px)" srcset="images/hero-mobile-barreto.webp">
+        <img src="images/hero-desktop-barreto.webp" width="1920" height="750" fetchpriority="high"
+             alt="Dr. Manuel Barreto Chaves, médico responsável técnico da Barreto Chaves Medicina Legal.">
+      </picture>
       <div class="duo" aria-hidden="true"></div>
       <div class="sweep" aria-hidden="true"></div>
       <div class="veil" aria-hidden="true"></div>
@@ -527,7 +529,7 @@ footer a:hover{color:var(--mark-2)}
       <div class="cta-row">
         <a class="btn btn-pulse" href="#" data-cta="hero-primario">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.3-2.6 10 10 0 0 1-2.1-3c-.2-.5-.3-1.1-.1-1.6.1-.4.7-1.1 1-1.3.3-.2.7-.1.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.1.2-.2.4 0 .7a7.4 7.4 0 0 0 3.2 2.7c.3.1.5.1.7-.1l.6-.7c.2-.2.5-.3.8-.2l1.5.7c.3.2.4.5.3.9Z"/></svg>
-          Mandar o laudo no WhatsApp
+          Enviar o laudo no WhatsApp
         </a>
         <a class="btn-line" href="#como-funciona">Ver como funciona</a>
       </div>
@@ -628,7 +630,7 @@ footer a:hover{color:var(--mark-2)}
       <span class="tag rv">Como funciona</span>
       <h2 class="meas rv">Você vê a leitura de viabilidade antes de decidir se contrata.</h2>
       <ol class="flow">
-        <li class="rv"><span class="step">Etapa 1</span><div><h3>Você manda a documentação</h3><p>Laudo do juízo, quesitos já apresentados e o que existir de documentação médica. Pelo WhatsApp ou por link seguro, como for mais rápido para você.</p></div><span class="when">no mesmo dia</span></li>
+        <li class="rv"><span class="step">Etapa 1</span><div><h3>Você envia a documentação</h3><p>Laudo do juízo, quesitos já apresentados e o que existir de documentação médica. Pelo WhatsApp ou por link seguro, como for mais rápido para você.</p></div><span class="when">no mesmo dia</span></li>
         <li class="rv"><span class="step">Etapa 2</span><div><h3>Análise prévia de viabilidade técnica</h3><p>Retorno objetivo: existe fragilidade técnica sustentável nesse laudo, quais pontos ela atinge e qual documento vale a pena produzir. Se não houver caminho técnico, você ouve isso com a mesma clareza, por escrito.</p></div><span class="when">até 72h úteis</span></li>
         <li class="rv"><span class="step">Etapa 3</span><div><h3>Parecer, quesitos ou impugnação</h3><p>Escopo e prazo combinados por escrito antes do aceite. Cada conclusão vem com a referência bibliográfica que a sustenta, para resistir a contra-argumentação.</p></div><span class="when">prazo acordado</span></li>
       </ol>
@@ -637,7 +639,7 @@ footer a:hover{color:var(--mark-2)}
           <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.3-2.6 10 10 0 0 1-2.1-3c-.2-.5-.3-1.1-.1-1.6.1-.4.7-1.1 1-1.3.3-.2.7-.1.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.1.2-.2.4 0 .7a7.4 7.4 0 0 0 3.2 2.7c.3.1.5.1.7-.1l.6-.7c.2-.2.5-.3.8-.2l1.5.7c.3.2.4.5.3.9Z"/></svg>
           Começar pela análise prévia
         </a>
-        <p class="cta-note">Manda o laudo e o prazo. A resposta vem com o que cabe fazer dentro dele.</p>
+        <p class="cta-note">Envie o laudo e o prazo. A resposta vem com o que cabe fazer dentro dele.</p>
       </div>
     </div>
   </section>
@@ -673,7 +675,7 @@ footer a:hover{color:var(--mark-2)}
       </div>
       <div class="rv d1">
         <div class="frame">
-          <img src="images/dr-barreto-retrato.webp" width="750" height="1254" loading="lazy" decoding="async"
+          <img src="images/dr-barreto-sobre.webp" width="1080" height="1600" loading="lazy" decoding="async"
                alt="Dr. Manuel Barreto Chaves, responsável técnico da Barreto Chaves Medicina Legal.">
         </div>
         <p class="cap">Res. CFM 2.336/2023: pós-graduações que não correspondem a especialidade registrada são informadas com a indicação NÃO ESPECIALISTA.</p>
@@ -703,13 +705,13 @@ footer a:hover{color:var(--mark-2)}
   <section id="faq">
     <div class="wrap">
       <span class="tag rv">Perguntas frequentes</span>
-      <h2 class="meas rv">O que os advogados perguntam antes de mandar o primeiro caso.</h2>
+      <h2 class="meas rv">O que os advogados perguntam antes de enviar o primeiro caso.</h2>
       <div class="faq rv d1">
         <details><summary>Qual a diferença entre o perito do juízo e o assistente técnico?</summary><p>O perito é nomeado pelo juiz e produz a prova técnica do processo. O assistente técnico é indicado e contratado pela parte, trabalha ao lado do advogado e apresenta parecer próprio, inclusive divergente. São funções distintas, previstas no CPC, arts. 465 e 466.</p></details>
         <details><summary>O laudo já foi juntado. Ainda faz diferença?</summary><p>Faz, desde que exista prazo em curso. É exatamente nessa hora que o parecer do assistente técnico existe: mostrar, com fundamento, onde a conclusão não se sustenta na documentação. O que ninguém pode fazer é prometer desfecho, porque a valoração da prova é do juízo.</p></details>
         <details><summary>A atuação é limitada a uma especialidade médica?</summary><p>Não. A assistência técnica médica pode ser exercida por médico regularmente inscrito no CRM e não se restringe a uma especialidade (CPC, arts. 465, §1º, II, e 466). A atuação cobre demandas cíveis, trabalhistas, previdenciárias e criminais. Quando o caso pede aprofundamento em área específica, isso é dito na análise prévia.</p></details>
         <details><summary>Em quanto tempo recebo uma resposta?</summary><p>Primeiro contato respondido em até 24 horas úteis. A análise prévia de viabilidade técnica sai em até 72 horas úteis depois que a documentação chega completa.</p></details>
-        <details><summary>Quais documentos preciso mandar?</summary><p>O laudo do perito do juízo, os quesitos apresentados pelas partes e a documentação médica que existir: prontuários, exames, atestados, relatórios e laudos anteriores. Documentação incompleta não impede a leitura inicial, mas limita o quanto a análise prévia consegue avançar.</p></details>
+        <details><summary>Quais documentos preciso enviar?</summary><p>O laudo do perito do juízo, os quesitos apresentados pelas partes e a documentação médica que existir: prontuários, exames, atestados, relatórios e laudos anteriores. Documentação incompleta não impede a leitura inicial, mas limita o quanto a análise prévia consegue avançar.</p></details>
         <details><summary>Vocês atuam fora de São José dos Campos?</summary><p>Sim. Análise documental e produção de parecer acontecem remotamente, para todo o país. Ato presencial, como audiência ou acompanhamento de perícia, é avaliado caso a caso por localidade e agenda.</p></details>
         <details><summary>É possível garantir a reversão do laudo?</summary><p>Não, e desconfie de quem prometer. A atividade médica é obrigação de meio. O compromisso é com o rigor da análise, com a fundamentação e com o prazo combinado. Quem decide o peso da prova é o juízo.</p></details>
         <details><summary>Como funcionam valores e contratação?</summary><p>Escopo varia com a complexidade do caso e o volume de documento, então não existe tabela pública. Depois da análise prévia você recebe escopo, prazo e valor por escrito, e decide a partir dali. Tudo o que chega é tratado em sigilo, conforme a LGPD.</p></details>
@@ -721,12 +723,12 @@ footer a:hover{color:var(--mark-2)}
   <section class="close" id="encaminhar">
     <div class="wrap close-in rv">
       <span class="tag">Encaminhar caso</span>
-      <h2>Manda o laudo e o prazo. A resposta diz o que ainda cabe fazer.</h2>
+      <h2>Envie o laudo e o prazo. A resposta diz o que ainda cabe fazer.</h2>
       <p style="margin-top:1.2rem">Começa pela análise prévia de viabilidade técnica, sem compromisso de contratação. Se não houver caminho técnico no seu caso, você vai saber logo, e sem rodeio.</p>
       <div class="cta-row">
         <a class="btn btn-pulse" href="#" data-cta="fechamento">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.3-2.6 10 10 0 0 1-2.1-3c-.2-.5-.3-1.1-.1-1.6.1-.4.7-1.1 1-1.3.3-.2.7-.1.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.1.2-.2.4 0 .7a7.4 7.4 0 0 0 3.2 2.7c.3.1.5.1.7-.1l.6-.7c.2-.2.5-.3.8-.2l1.5.7c.3.2.4.5.3.9Z"/></svg>
-          Mandar o laudo no WhatsApp
+          Enviar o laudo no WhatsApp
         </a>
         <p class="cta-note">WhatsApp direto: (12) 99666-2041</p>
       </div>
@@ -747,14 +749,14 @@ footer a:hover{color:var(--mark-2)}
       </div>
       <div>
         <p style="margin:0">
-          <a href="https://wa.me/5512996662041" data-cta="rodape">WhatsApp (12) 99666-2041</a><br>
+          <a href="https://tintim.link/s/NKEZzXvx" data-cta="rodape">WhatsApp (12) 99666-2041</a><br>
           <a href="mailto:drmanuelbarreto@barretochavesmedicinalegal.com">drmanuelbarreto@barretochavesmedicinalegal.com</a><br>
           <a href="/politica-de-privacidade.html">Política de Privacidade</a>
         </p>
       </div>
     </div>
     <div class="cfm">
-      <span>Barreto Chaves Medicina Legal. Registro CRM-SP nº (a confirmar).</span>
+      <span>Barreto Chaves Medicina Legal. Registro CRM-SP nº 83558.</span>
       <span>Responsável Técnico: Dr. Manuel Barreto Chaves, MÉDICO, CRM-SP 83558.</span>
       <span>Conteúdo dirigido a profissionais do Direito. Esta página não presta orientação clínica nem diagnóstico.</span>
     </div>
@@ -764,7 +766,7 @@ footer a:hover{color:var(--mark-2)}
 <div class="sticky" aria-label="Contato rápido">
   <a class="btn btn-pulse" href="#" data-cta="sticky-mobile">
     <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.3-2.6 10 10 0 0 1-2.1-3c-.2-.5-.3-1.1-.1-1.6.1-.4.7-1.1 1-1.3.3-.2.7-.1.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.1.2-.2.4 0 .7a7.4 7.4 0 0 0 3.2 2.7c.3.1.5.1.7-.1l.6-.7c.2-.2.5-.3.8-.2l1.5.7c.3.2.4.5.3.9Z"/></svg>
-    Mandar o laudo no WhatsApp
+    Enviar o laudo no WhatsApp
   </a>
 </div>
 
@@ -780,17 +782,13 @@ footer a:hover{color:var(--mark-2)}
 (function(){
   "use strict";
   var PHONE = "5512996662041";
-  function waHref(origin){
-    var msg = "Olá. Sou advogado(a) e preciso de análise técnica de um laudo pericial médico. "
-            + "Posso enviar o laudo e o prazo do processo?";
-    return "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg)
-         + "&utm_source=lp01&utm_content=" + encodeURIComponent(origin || "na");
-  }
+  var WA_LINK = "https://tintim.link/s/NKEZzXvx"; // Tintim: rastreia atribuição e redireciona pro WhatsApp
+  function waHref(origin){ return WA_LINK; }
   function fire(origin, go){
     var done = false;
     function nav(){ if(!done){ done = true; window.open(go, "_blank", "noopener"); } }
     if (typeof gtag === "function"){
-      gtag("event","conversion",{ send_to:"AW-18177286407/(rótulo — pendente)", event_callback: nav });
+      gtag("event","conversion",{ send_to:"AW-18177286407/[[ROTULO_CONVERSAO]]", event_callback: nav });
       gtag("event","whatsapp_click",{ lp:"lp01_impugnacao", cta_origin: origin });
       setTimeout(nav, 900);
     } else { nav(); }
@@ -924,7 +922,7 @@ footer a:hover{color:var(--mark-2)}
       {"@type":"Question","name":"O laudo já foi juntado. Ainda faz diferença?","acceptedAnswer":{"@type":"Answer","text":"Faz, desde que exista prazo em curso. O parecer do assistente técnico mostra com fundamento onde a conclusão do laudo não se sustenta na documentação. Nenhum profissional pode prometer desfecho, porque a valoração da prova é do juízo."}},
       {"@type":"Question","name":"A atuação é limitada a uma especialidade médica?","acceptedAnswer":{"@type":"Answer","text":"Não. A assistência técnica médica pode ser exercida por médico regularmente inscrito no CRM e não se restringe a uma especialidade, conforme o CPC, arts. 465, parágrafo 1º, II, e 466. A atuação cobre demandas cíveis, trabalhistas, previdenciárias e criminais."}},
       {"@type":"Question","name":"Em quanto tempo recebo uma resposta?","acceptedAnswer":{"@type":"Answer","text":"O primeiro contato é respondido em até 24 horas úteis. A análise prévia de viabilidade técnica sai em até 72 horas úteis após o recebimento da documentação completa."}},
-      {"@type":"Question","name":"Quais documentos preciso mandar?","acceptedAnswer":{"@type":"Answer","text":"Laudo do perito do juízo, quesitos apresentados pelas partes e a documentação médica disponível: prontuários, exames, atestados, relatórios e laudos anteriores."}},
+      {"@type":"Question","name":"Quais documentos preciso enviar?","acceptedAnswer":{"@type":"Answer","text":"Laudo do perito do juízo, quesitos apresentados pelas partes e a documentação médica disponível: prontuários, exames, atestados, relatórios e laudos anteriores."}},
       {"@type":"Question","name":"Vocês atuam fora de São José dos Campos?","acceptedAnswer":{"@type":"Answer","text":"Sim. Análise documental e produção de parecer acontecem remotamente, para todo o país. Atos presenciais são avaliados caso a caso por localidade e agenda."}},
       {"@type":"Question","name":"É possível garantir a reversão do laudo?","acceptedAnswer":{"@type":"Answer","text":"Não. A atividade médica é obrigação de meio. O compromisso é com o rigor da análise, a fundamentação e o prazo combinado. A valoração da prova é do juízo."}},
       {"@type":"Question","name":"Como funcionam valores e contratação?","acceptedAnswer":{"@type":"Answer","text":"O escopo varia com a complexidade do caso e o volume documental, por isso não há tabela pública. Depois da análise prévia, escopo, prazo e valor são apresentados por escrito. Toda documentação é tratada em sigilo, conforme a LGPD."}}
