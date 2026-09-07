@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Impugnação de laudo pericial médico | Assistência técnica para advogados</title>
-<meta name="description" content="Análise crítica do laudo do perito do juízo para advogados. Parecer técnico, quesitos e subsídios para impugnação. Retorno da análise prévia em até 72 horas úteis. CRM-SP 83558.">
+<title>Impugnação de laudo pericial médico | Assistência técnica em perícia médica</title>
+<meta name="description" content="Análise crítica do laudo do perito do juízo, para quem está no processo e para advogados. Parecer técnico, quesitos e subsídios para impugnação. Retorno da análise prévia em até 72 horas úteis. CRM-SP 83558.">
 <link rel="canonical" href="https://barretochavesmedicinalegal.com/impugnacao-de-laudo-pericial">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
@@ -462,6 +462,20 @@ footer a:hover{color:var(--mark-2)}
   background:linear-gradient(180deg,rgba(3,13,18,.4),rgba(3,13,18,.98));border-top:1px solid rgba(200,169,106,.2)}
 .sticky .btn{width:100%;justify-content:center}
 @media (max-width:900px){.sticky{display:block}body{padding-bottom:84px}}
+/* faixa "voce e o advogado do caso": caminho proprio, sem tirar o foco de quem esta no processo */
+.adv{border:1px solid rgba(200,169,106,.34);border-radius:3px;padding:clamp(28px,4vw,48px);
+  max-width:960px;margin-inline:auto;
+  background:linear-gradient(160deg,rgba(200,169,106,.07),rgba(6,18,26,0) 62%),rgba(6,18,26,.5)}
+.adv h2{margin:.5rem 0 0;font-size:clamp(1.5rem,2.6vw,2.1rem)}
+.adv p{color:var(--text-d);margin-top:1.1rem;max-width:62ch}
+.adv .btn{margin-top:1.9rem}
+.adv .adv-nota{font-family:var(--f-data);font-size:.78rem;color:var(--text-d-soft);margin-top:1rem}
+
+/* o CTA do hero "vira" a barra fixa: com JS, a barra so entra quando o botao do hero sai da tela.
+   Sem JS nada muda (a barra segue como antes), a classe .js-sticky so e' posta pelo script. */
+.js-sticky .sticky{transform:translateY(115%);opacity:0;pointer-events:none;
+  transition:transform .34s var(--ease),opacity .28s var(--ease)}
+.js-sticky .sticky.is-on{transform:none;opacity:1;pointer-events:auto}
 
 .consent{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;max-width:520px;
   background:rgba(6,18,26,.97);border:1px solid rgba(200,169,106,.35);padding:18px;
@@ -471,7 +485,14 @@ footer a:hover{color:var(--mark-2)}
 .consent .btn{padding:12px 18px;font-size:.85rem;min-height:44px}
 .consent .btn.sec{background:transparent;color:var(--mark);box-shadow:none;border:1px solid rgba(200,169,106,.45)}
 .consent .btn.sec::before,.consent .btn.sec::after{display:none}
-@media (max-width:900px){.consent{bottom:92px}}
+/* botao Aceitar em dourado da marca: o verde fica reservado ao WhatsApp */
+.consent .btn.acc{background:linear-gradient(135deg,var(--mark-deep) 0%,var(--mark) 45%,var(--mark-2) 100%);
+  color:#0B1B24;box-shadow:0 12px 30px -14px rgba(200,169,106,.75)}
+.consent .btn.acc::before,.consent .btn.acc::after{display:none}
+/* no mobile o aviso encosta no rodape da tela (longe do CTA do hero) e so sobe
+   quando a barra fixa esta no ar, pra nao cobrir uma a outra */
+@media (max-width:900px){.consent{bottom:12px;transition:bottom .34s var(--ease)}
+  body.sticky-on .consent{bottom:92px}}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -536,12 +557,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="wrap hero-in">
       <div class="hero-copy">
-      <span class="tag">Assistência técnica em perícia médica, para advogados</span>
-      <h1>O laudo veio contra o seu cliente. Ainda dá para responder com <span class="glow">técnica</span>.</h1>
+      <span class="tag">Assistência técnica em perícia médica</span>
+      <h1>O laudo veio contra você. Ainda dá para responder com <span class="glow">técnica</span>.</h1>
       <svg class="ecg" viewBox="0 0 360 46" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0 23 H96 l7 -4 6 4 H150 l9 -19 11 38 9 -34 7 22 6 -7 H250 l7 -4 6 4 H360"/>
       </svg>
-      <p class="hero-sub">Lemos o laudo do perito do juízo com a documentação médica ao lado e mostramos onde a conclusão não se sustenta. Primeira leitura em até 72 horas úteis.</p>
+      <p class="hero-sub">Lemos o laudo do perito do juízo com a sua documentação médica ao lado e mostramos onde a conclusão não se sustenta. Primeira leitura em até 72 horas úteis.</p>
       <div class="cta-row">
         <a class="btn btn-pulse" href="#" data-cta="hero-primario">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.3-2.6 10 10 0 0 1-2.1-3c-.2-.5-.3-1.1-.1-1.6.1-.4.7-1.1 1-1.3.3-.2.7-.1.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.1.2-.2.4 0 .7a7.4 7.4 0 0 0 3.2 2.7c.3.1.5.1.7-.1l.6-.7c.2-.2.5-.3.8-.2l1.5.7c.3.2.4.5.3.9Z"/></svg>
@@ -608,7 +629,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul class="inside">
         <li class="rv d1"><b>Parecer divergente</b>Documento técnico que sustenta a divergência ponto por ponto, com a literatura que embasa cada afirmação.</li>
         <li class="rv d2"><b>Quesitos complementares</b>Perguntas escritas para expor a lacuna da fundamentação, e não para repetir o que já foi respondido.</li>
-        <li class="rv d3"><b>Subsídio para a peça</b>Material organizado na linguagem da manifestação, pronto para você aproveitar direto na petição.</li>
+        <li class="rv d3"><b>Subsídio para a peça</b>Material organizado na linguagem da manifestação, pronto para o advogado do caso aproveitar direto na petição.</li>
       </ul>
     </div>
   </section>
@@ -666,7 +687,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="veil"></div>
     <div class="wrap">
       <p class="q rv">A fragilidade mais comum de um laudo não está no rito. Está na <em>vivência clínica</em> do quadro que se discute.</p>
-      <p class="qa rv d1">30 anos dentro do prontuário — emergência, UTI, centro cirúrgico</p>
+      <p class="qa rv d1">30 anos dentro do prontuário: emergência, UTI, centro cirúrgico</p>
     </div>
   </section>
 
@@ -753,11 +774,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- ===================== VOCE E ADVOGADO ===================== -->
+  <section id="advogados">
+    <div class="wrap">
+      <div class="adv rv">
+        <span class="tag">Para advogados</span>
+        <h2>Você é o advogado do caso?</h2>
+        <p>A assistência técnica é contratada pela parte, e a indicação é formalizada por você nos autos,
+        na forma do art. 465, §1º, II do CPC. O que chega às suas mãos é material de peça: a divergência
+        sustentada ponto por ponto, quesitos complementares que expõem a lacuna da fundamentação e o texto
+        já na linguagem da manifestação.</p>
+        <p>Envie o laudo e o prazo. A análise prévia de viabilidade técnica volta em até 72 horas úteis,
+        sem compromisso de contratação. Se não houver caminho técnico no caso, você recebe isso por escrito.</p>
+        <a class="btn btn-pulse" href="#" data-cta="advogado"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1a11 11 0 0 1-4.3-2.6 10 10 0 0 1-2.1-3c-.2-.5-.3-1.1-.1-1.6.1-.4.7-1.1 1-1.3.3-.2.7-.1.9.2l.8 1.4c.1.3.1.5-.1.8l-.4.5c-.1.2-.2.4 0 .7a7.4 7.4 0 0 0 3.2 2.7c.3.1.5.1.7-.1l.6-.7c.2-.2.5-.3.8-.2l1.5.7c.3.2.4.5.3.9Z"/></svg>
+          Enviar o caso no WhatsApp
+        </a>
+        <p class="adv-nota">Conversa direta com o responsável técnico. Sem formulário, sem robô.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== 8. FAQ ===================== -->
   <section id="faq">
     <div class="wrap">
       <span class="tag rv">Perguntas frequentes</span>
-      <h2 class="meas rv">O que os advogados perguntam antes de enviar o primeiro caso.</h2>
+      <h2 class="meas rv">O que perguntam antes de enviar o primeiro caso.</h2>
       <div class="faq rv d1">
         <details><summary>Qual a diferença entre o perito do juízo e o assistente técnico?</summary><p>O perito é nomeado pelo juiz e produz a prova técnica do processo. O assistente técnico é indicado e contratado pela parte, trabalha ao lado do advogado e apresenta parecer próprio, inclusive divergente. São funções distintas, previstas no CPC, arts. 465 e 466.</p></details>
         <details><summary>O laudo já foi juntado. Ainda faz diferença?</summary><p>Faz, desde que exista prazo em curso. É exatamente nessa hora que o parecer do assistente técnico existe: mostrar, com fundamento, onde a conclusão não se sustenta na documentação. O que ninguém pode fazer é prometer desfecho, porque a valoração da prova é do juízo.</p></details>
@@ -825,7 +866,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <aside class="consent" id="consent" hidden aria-label="Aviso de cookies">
   <p style="margin:0">Usamos cookies de medição para entender como esta página é encontrada e usada. A escolha é sua.</p>
   <div class="row">
-    <button class="btn" type="button" data-consent="granted">Aceitar</button>
+    <button class="btn acc" type="button" data-consent="granted">Aceitar</button>
     <button class="btn sec" type="button" data-consent="denied">Recusar</button>
   </div>
 </aside>
@@ -949,6 +990,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
+  /* Barra fixa do mobile: entra quando o CTA do hero sai da tela, sai quando ele volta.
+     So liga se houver IntersectionObserver e se os dois elementos existirem. */
+  (function(){
+    var bar  = document.querySelector(".sticky"),
+        hero = document.querySelector('[data-cta="hero-primario"]');
+    if(!bar || !hero || !("IntersectionObserver" in window)) return;
+    document.documentElement.classList.add("js-sticky");
+    new IntersectionObserver(function(es){
+      var visivel = !es[0].isIntersecting;
+      bar.classList.toggle("is-on", visivel);
+      document.body.classList.toggle("sticky-on", visivel);
+    },{threshold:0}).observe(hero);
+  })();
+
   /* Consent Mode v2 */
   var box = document.getElementById("consent"), KEY = "bc_consent";
   function apply(s){ gtag("consent","update",{ad_storage:s,ad_user_data:s,ad_personalization:s,analytics_storage:s}); }
@@ -968,7 +1023,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   "@context":"https://schema.org",
   "@graph":[
     {"@type":"ProfessionalService","@id":"https://barretochavesmedicinalegal.com/#organizacao","name":"Barreto Chaves Medicina Legal","description":"Assistência técnica médica em perícia judicial: análise crítica de laudo pericial, parecer técnico, quesitos e subsídios para impugnação em demandas cíveis, trabalhistas, previdenciárias e criminais.","url":"https://barretochavesmedicinalegal.com/","telephone":"+55-12-99666-2041","email":"drmanuelbarreto@barretochavesmedicinalegal.com","address":{"@type":"PostalAddress","streetAddress":"Rua Carlos Maria Aurichio, 70, Sala 503, Aquarius","addressLocality":"São José dos Campos","addressRegion":"SP","postalCode":"12246-876","addressCountry":"BR"},"areaServed":{"@type":"Country","name":"Brasil"},"employee":{"@type":"Person","name":"Manuel Barreto Chaves","jobTitle":"Médico, Responsável Técnico","identifier":"CRM-SP 83558"}},
-    {"@type":"WebPage","@id":"https://barretochavesmedicinalegal.com/impugnacao-de-laudo-pericial#pagina","url":"https://barretochavesmedicinalegal.com/impugnacao-de-laudo-pericial","name":"Impugnação de laudo pericial médico. Assistência técnica para advogados.","inLanguage":"pt-BR","isPartOf":{"@id":"https://barretochavesmedicinalegal.com/#organizacao"},"audience":{"@type":"Audience","audienceType":"Advogados e escritórios de advocacia"}},
+    {"@type":"WebPage","@id":"https://barretochavesmedicinalegal.com/impugnacao-de-laudo-pericial#pagina","url":"https://barretochavesmedicinalegal.com/impugnacao-de-laudo-pericial","name":"Impugnação de laudo pericial médico. Assistência técnica em perícia médica.","inLanguage":"pt-BR","isPartOf":{"@id":"https://barretochavesmedicinalegal.com/#organizacao"},"audience":{"@type":"Audience","audienceType":"Partes em processo judicial com perícia médica, advogados e escritórios de advocacia"}},
     {"@type":"FAQPage","@id":"https://barretochavesmedicinalegal.com/impugnacao-de-laudo-pericial#faq","mainEntity":[
       {"@type":"Question","name":"Qual a diferença entre o perito do juízo e o assistente técnico?","acceptedAnswer":{"@type":"Answer","text":"O perito é nomeado pelo juiz e produz a prova técnica do processo. O assistente técnico é indicado e contratado pela parte, trabalha ao lado do advogado e apresenta parecer próprio, inclusive divergente, conforme o CPC, arts. 465 e 466."}},
       {"@type":"Question","name":"O laudo já foi juntado. Ainda faz diferença?","acceptedAnswer":{"@type":"Answer","text":"Faz, desde que exista prazo em curso. O parecer do assistente técnico mostra com fundamento onde a conclusão do laudo não se sustenta na documentação. Nenhum profissional pode prometer desfecho, porque a valoração da prova é do juízo."}},
