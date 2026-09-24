@@ -429,6 +429,16 @@ mark sup{font-family:var(--f-data);font-size:.54em;font-weight:500;color:#101E26
 .cv li:first-child{border-top:0}
 
 #depoimentos{background:linear-gradient(180deg,var(--deep),var(--abyss))}
+/* 24/09: depoimento em vídeo (Paulo Henrique, advogado) */
+.dep-grid.com-video{grid-template-columns:minmax(260px,340px) minmax(0,1fr);align-items:stretch}
+.dep-grid.com-video .dep-video{grid-row:1 / span 2;padding:0;display:flex;flex-direction:column}
+.dep-grid.com-video .dep-video::before{display:none}
+.dep-video-quadro{position:relative;background:#000;aspect-ratio:9/16;width:100%}
+.dep-video-quadro video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+.dep-video .dep-frase{font-family:var(--f-display);font-size:1.02rem;line-height:1.55;color:var(--text-d);margin:0;padding:18px 22px 0}
+.dep-video .dep-author{margin:0;padding:14px 22px 20px;border-top:0}
+@media (max-width:760px){.dep-grid.com-video{grid-template-columns:minmax(0,1fr)}
+  .dep-grid.com-video .dep-video{grid-row:auto;width:100%;max-width:400px;margin:0 auto}}
 .dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:22px;margin-top:clamp(2.2rem,4vw,3.2rem)}
 .dep-card{margin:0;background:linear-gradient(180deg,var(--ink-2),var(--ink));
   border:1px solid rgba(200,169,106,.22);box-shadow:0 40px 90px -60px rgba(0,0,0,.9);
@@ -936,7 +946,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap">
       <span class="tag rv">Quem já trabalhou conosco</span>
       <h2 class="meas rv">Advogados que confiaram a parte médica do processo a nós.</h2>
-      <div class="dep-grid">
+      <div class="dep-grid com-video">
+        <figure class="dep-card dep-video rv">
+          <div class="dep-video-quadro">
+            <video controls playsinline preload="none" width="576" height="1024" poster="/v3/dep-paulo-henrique-capa.webp"
+              aria-label="Depoimento em vídeo de Paulo Henrique, advogado em São José dos Campos"
+              onplay="window.dataLayer&amp;&amp;dataLayer.push({event:'depoimento_video_play',video:'paulo-henrique'})">
+              <source src="/v3/depoimento-paulo-henrique.mp4" type="video/mp4">
+            </video>
+          </div>
+          <blockquote class="dep-frase">“Profissional comprometido, capacitado e com uma visão muito multidisciplinar.”</blockquote>
+          <figcaption class="dep-author">
+            <div><b>Paulo Henrique</b><span>Advogado · São José dos Campos (SP)</span></div>
+          </figcaption>
+        </figure>
         <figure class="dep-card rv">
           <blockquote class="dep-quote">“Gostaria de registrar meu sincero agradecimento ao Dr. Manuel Barreto, pela dedicação, profissionalismo e excelência na atuação como Perito Judicial em um processo no qual atuei. Sua competência técnica, imparcialidade e seriedade foram fundamentais para a busca da verdade e para a correta condução da Justiça. Minha admiração e gratidão pelo seu trabalho.”</blockquote>
           <figcaption class="dep-author">
